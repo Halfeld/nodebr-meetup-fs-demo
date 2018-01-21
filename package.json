@@ -1,0 +1,26 @@
+{
+  "name": "nodebr-meetup-fs-demo",
+  "version": "0.0.1",
+  "description": "A example to nodebr meetup",
+  "main": "index.js",
+  "scripts": {
+    "dev": "$(npm bin)/nodemon index.js"
+  },
+  "keywords": [
+    "upload",
+    "node",
+    "nodebr"
+  ],
+  "author": "Igor Luiz Halfeld <hello@igorluiz.me>",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "multer": "^1.3.0",
+    "pug": "^2.0.0-rc.4",
+    "stylus": "^0.54.5"
+  },
+  "devDependencies": {
+    "nodemon": "^1.14.11"
+  }
+}

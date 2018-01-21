@@ -1,0 +1,52 @@
+extends layout
+
+block content
+  div.sidebar
+    div.container
+      div.row
+        diw.col-md-12
+          button(
+            type='button',
+            class='btn btn-primary',
+            data-target='#add-file',
+            data-toggle='modal'
+          ) Add a file
+  div.container
+    div.row
+      div.col-md-12
+        h1.container-title NodeBR S3
+      div.col-md-12
+        
+    div.row
+      div.col-md-12
+        table.table
+          thead
+            tr
+              th(scope="col") #
+              th(scope="col") Filename
+              th(scope="col") Type
+              th(scope="col") Actions
+          tbody
+            each file in files
+              tr
+                td(style='width: 50px')= file.index
+                td= file.name
+                td= file.type
+                td(style='width: 200px')
+                  div.btn-group
+                    button(
+                      type='button',
+                      class='btn btn-light btn-details',
+                      data-type=file.type,
+                      data-filename=file.name
+                    ) Details
+                    button(
+                      type='button',
+                      class='btn btn-danger btn-delete',
+                      data-type=file.type,
+                      data-filename=file.name
+                    ) Delete
+
+  include includes/addFileModal.pug  
+  include includes/showFileDetailsModal.pug
+
