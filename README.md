@@ -5,9 +5,9 @@
 
 ![screenshot](print.jpeg)
 
-=== 
+--- 
 
-#### List all of files
+### List all of files
 
 **GET `/files`**
 
@@ -49,7 +49,7 @@ _response_
 }
 ```
 
-#### List details from a specific file
+### List details from a specific file
 
 **GET `/files/:filename`**
 
@@ -74,7 +74,7 @@ _response_
 }
 ```
 
-#### Delete a specific file
+### Delete a specific file
 
 **DELETE `/files/:filename`**
 
