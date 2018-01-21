@@ -1,6 +1,8 @@
 ### Node.js File System Module
 
-> A upload files DEMO to [nodebr meetup](https://www.meetup.com/nodebr/events/246613295/).
+> A upload files DEMO to [NodeBR meetup](https://www.meetup.com/nodebr/events/246613295/).
+
+![screenshot](print.jpeg)
 
 #### List all of files
 
