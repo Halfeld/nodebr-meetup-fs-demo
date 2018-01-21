@@ -1,6 +1,6 @@
 <p align="center">
   <h3 align="center">Node.js File System Module</h3>
-  <p align="center">A upload files DEMO to [NodeBR meetup](https://www.meetup.com/nodebr/events/246613295/).</p>
+  <p align="center">A upload files demo to <a href="https://www.meetup.com/nodebr/events/246613295/">NodeBR meetup</a>.</p>
 </p>
 
 ![screenshot](print.jpeg)
