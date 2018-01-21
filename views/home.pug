@@ -8,7 +8,7 @@ block content
           button(
             type='button',
             class='btn btn-primary',
-            data-target='#add-file',
+            data-target='#addFile',
             data-toggle='modal'
           ) Add a file
   div.container
@@ -16,6 +16,8 @@ block content
       div.col-md-12
         h1.container-title NodeBR S3
       div.col-md-12
+    
+    div.alert#alert
         
     div.row
       div.col-md-12
@@ -32,8 +34,16 @@ block content
                 td(style='width: 50px')= file.index
                 td= file.name
                 td= file.type
-                td(style='width: 200px')
+                td(style='width: 300px')
                   div.btn-group
+                    a(
+                      href=`/uploads/${file.name}.${file.type}`
+                      target='_blank'
+                      role='button',
+                      class='btn btn-link',
+                      data-type=file.type,
+                      data-filename=file.name
+                    ) Link
                     button(
                       type='button',
                       class='btn btn-light btn-details',

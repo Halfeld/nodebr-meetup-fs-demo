@@ -2,13 +2,15 @@
 const {
   readdir,
   unlink,
-  stat
+  stat,
+  writeFile
 } = require('fs')
 const { promisify } = require('util')
 
 const readdirPromised = promisify(readdir)
 const statsPromised = promisify(stat)
 const unlinkPromised = promisify(unlink)
+const writeFilePromised = promisify(writeFile)
 
 class HomeController {
 
@@ -17,6 +19,13 @@ class HomeController {
     this.uploadPath = `${execDirectory}/public/uploads`
   }
 
+  async uploadSingleFile ({ originalname, buffer }, name = new Date().getTime(), response) {
+    const extension = originalname.split('.')[1]
+    const finalName = `${name}.${extension}`
+
+    await writeFilePromised(`${this.uploadPath}/${finalName}`, buffer)
+    response.json()
+  }
 
   async listFiles () {
     const filenames = await readdirPromised(this.uploadPath)

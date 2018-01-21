@@ -22,7 +22,6 @@
           })
           .catch((getImageDetailsError) => console.log('* Get image details error', getImageDetailsError))
       })
-      console.log(detailButton.getAttribute('data-filename'))
     })
   
   $('.btn-delete')
@@ -34,13 +33,25 @@
 
         const deleteRequest = new Request(`/file/${filename}`, { method: 'DELETE' })
         fetch(deleteRequest)
-          .then((res) => res.json())
           .then((res) => {
-            console.log('res', res)
+            window.location.reload()        
           })
           .catch((err) => console.log('err', err))
       })
     })
+  
+  $('#upload').on('click', (event) => {
+    const formData = new FormData()
+    formData.append('file', $('#fileInput')[0].files[0])
+    formData.append('name', $('#filename').val())
+
+    const uploadRequest = new Request(`/file`, { method: 'POST', body: formData })
+    fetch(uploadRequest)
+      .then((res) => {
+        window.location.reload()        
+      })
+      .catch((err) => console.log('err', err))
+  })
 
 
 })(jQuery, window)
