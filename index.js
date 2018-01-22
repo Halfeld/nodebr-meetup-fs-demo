@@ -7,7 +7,7 @@ fs.readFile('./test.txt', (err, data) => {
 })
 
 // Synchronous read
-var data = fs.readFileSync('./test.txt')
+const data = fs.readFileSync('./test.txt')
 console.log('Synchronous read: ' + data.toString())
 
 console.log('Program Ended')
